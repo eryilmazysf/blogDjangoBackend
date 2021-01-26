@@ -26,6 +26,10 @@ urlpatterns = [
     # path('users/', include('users.urls')),
     path('api/', include('blog_api.urls')),
     path('api/user/', include('user_api.urls')),
+    url(r'^media/(?P<path>.*)$', serve,
+        {'document_root':       settings.MEDIA_ROOT}),
+    url(r'^static/(?P<path>.*)$', serve,
+        {'document_root': settings.STATIC_ROOT}),
 ]
 
 
